@@ -126,6 +126,24 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1594899050044</Id>
+					<Name><![CDATA[allNonLineObstacles]]></Name>
+					<X>-140</X><Y>90</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[MarkupShape]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+						<CollectionInitializer Class="CodeValue">
+							<Code><![CDATA[{ circularWall1 }]]></Code>
+						</CollectionInitializer>
+					</Properties>
+
+				</Variable>
 			</Variables>
 			<Connectors>
 				<Connector>
@@ -186,7 +204,7 @@
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[port1]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
@@ -219,7 +237,7 @@
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[port]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
@@ -254,7 +272,7 @@
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[port]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
@@ -289,7 +307,7 @@
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[port]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
@@ -314,7 +332,7 @@
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[port]]></ItemName>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
@@ -347,7 +365,7 @@
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[port2]]></ItemName>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
@@ -855,14 +873,17 @@
 					<ShowLabel>true</ShowLabel>
 					<ActiveObjectClass>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 					</ActiveObjectClass>
 					<GenericParameterSubstitute>
 						<GenericParameterSubstituteReference>
 							<PackageName><![CDATA[pedMoveTo]]></PackageName>
-							<ClassName><![CDATA[PedMoveTo]]></ClassName>
+							<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 							<ItemName><![CDATA[1589970288655]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[Customer]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
@@ -2086,6 +2107,25 @@ help for more details.]]></Text>
 					</ImageFiles>
 					<OriginalSize>false</OriginalSize>
 				</Image>
+				<OvalWall>
+					<Id>1594900106447</Id>
+					<Name><![CDATA[circularWall1]]></Name>
+					<X>660</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LineColor>-3308225</LineColor>
+					<LineWidth>2</LineWidth>
+					<LineMaterial>null</LineMaterial>
+					<FillingType>HATCHED_AREA</FillingType>
+					<ZHeight>20</ZHeight>
+					<Rotation>0.0</Rotation>
+					<RadiusX>30</RadiusX>
+					<RadiusY>20</RadiusY>
+				</OvalWall>
 			</Presentation>
 
 				</Level>
@@ -2095,16 +2135,23 @@ help for more details.]]></Text>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
 			<Id>1589970288657</Id>
-			<Name><![CDATA[PedMoveTo]]></Name>
+			<Name><![CDATA[PedDistancingMoveTo]]></Name>
+			<AdditionalClassCode><![CDATA[// Private class (effectively just a data structure) used to hold state information (per pedestrian in the block)
+// relating to movement adjustments they have made / will be making
+private class DistancingState {
+	private double adjustmentX;
+	private double adjustmentY;
+	private int numAdjustmentAttempts = 0;
+};]]></AdditionalClassCode>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
-			<Generic>false</Generic>
+			<Generic>true</Generic>
 			<GenericParameter>
 				<Id>1589970288655</Id>
 				<Name><![CDATA[1589970288655]]></Name>
 				<GenericParameterValue Class="CodeValue">
-					<Code><![CDATA[T extends Agent]]></Code>
+					<Code><![CDATA[P extends Agent & DistancingPedestrian]]></Code>
 				</GenericParameterValue>
-				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+				<GenericParameterLabel><![CDATA[Pedestrian agent type (must implement DistancingPedestrian)]]></GenericParameterLabel>
 			</GenericParameter>
 			<FlowChartsUsage>ENTITY</FlowChartsUsage>
 			<SamplesToKeep>100</SamplesToKeep>
@@ -2534,8 +2581,23 @@ help for more details.]]></Text>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Customer]]></ElementClass>
+						<ElementClass><![CDATA[P]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1594897959079</Id>
+					<Name><![CDATA[pedDistancingStateMap]]></Name>
+					<X>-390</X><Y>470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[LinkedHashMap]]></CollectionClass>
+						<ElementClass><![CDATA[P]]></ElementClass>
+						<ValueElementClass><![CDATA[DistancingState]]></ValueElementClass>
 					</Properties>
 
 				</Variable>
@@ -2589,7 +2651,7 @@ help for more details.]]></Text>
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2616,7 +2678,7 @@ help for more details.]]></Text>
 					<SourceId>1591700194304</SourceId>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[plainTransfer]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2641,7 +2703,7 @@ help for more details.]]></Text>
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2651,7 +2713,7 @@ help for more details.]]></Text>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[selectOutput]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2675,7 +2737,7 @@ help for more details.]]></Text>
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[selectOutput]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2685,7 +2747,7 @@ help for more details.]]></Text>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo1]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2708,7 +2770,7 @@ help for more details.]]></Text>
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[selectOutput]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2736,7 +2798,7 @@ help for more details.]]></Text>
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo1]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2764,7 +2826,7 @@ help for more details.]]></Text>
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo1]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2774,7 +2836,7 @@ help for more details.]]></Text>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[delay1]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2797,7 +2859,7 @@ help for more details.]]></Text>
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[delay1]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2807,7 +2869,7 @@ help for more details.]]></Text>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2834,7 +2896,7 @@ help for more details.]]></Text>
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[plainTransfer]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2844,7 +2906,7 @@ help for more details.]]></Text>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2903,10 +2965,11 @@ help for more details.]]></Text>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[for (int i=0;i<ped_collection.size();i++){
-	Customer thisAgent = ped_collection.get(i);
+	P thisAgent = ped_collection.get(i);
+	DistancingState pedDistancingState = pedDistancingStateMap.get(thisAgent); 
 	double x1 = thisAgent.getX();
 	double y1 = thisAgent.getY();
-	Customer NearestPerson = ped_collection.get(i).getNearestAgent(ped_collection);
+	P NearestPerson = thisAgent.getNearestAgent(ped_collection);
 	if (NearestPerson!=null ) {
 		double x2 = NearestPerson.getX();
 		double y2 = NearestPerson.getY();
@@ -2916,28 +2979,37 @@ help for more details.]]></Text>
 		double distance_cus = Math.sqrt(Math.pow(x_diff, 2)+Math.pow(y_diff,2))/main.scaleFactor; //px per meter
 		if (distance_cus < separatingDistance) {
 			if (x_diff<0 && y_diff>0){ //move to lower left hand corner
-				thisAgent.x_jiggle=-x_jiggle;
-				thisAgent.y_jiggle=y_jiggle;
+				pedDistancingState.adjustmentX=-x_jiggle;
+				pedDistancingState.adjustmentY=y_jiggle;
 			} else if (x_diff>0 && y_diff<0) { //move to upper right hand corner
-				thisAgent.x_jiggle=x_jiggle;
-				thisAgent.y_jiggle=-y_jiggle;
+				pedDistancingState.adjustmentX=x_jiggle;
+				pedDistancingState.adjustmentY=-y_jiggle;
 			} else if (x_diff<0 && y_diff<0) { //move to upper left hand corner
-				thisAgent.x_jiggle=-x_jiggle;
-				thisAgent.y_jiggle=-y_jiggle;
+				pedDistancingState.adjustmentX=-x_jiggle;
+				pedDistancingState.adjustmentY=-y_jiggle;
 			}  else if (x_diff>0 && y_diff>0) { //move to upper left hand corner
-				thisAgent.x_jiggle=x_jiggle;
-				thisAgent.y_jiggle=y_jiggle;
+				pedDistancingState.adjustmentX=x_jiggle;
+				pedDistancingState.adjustmentY=y_jiggle;
 			}  else if (x_diff<0 && y_diff==0) { //move to the left
-				thisAgent.x_jiggle=-x_jiggle;
+				pedDistancingState.adjustmentX=-x_jiggle;
 			}  else if (x_diff>0 && y_diff==0) { //move to the right
-				thisAgent.x_jiggle=x_jiggle;
+				pedDistancingState.adjustmentX=x_jiggle;
 			}  else if (x_diff==0 && y_diff<0) { //move to the top
-				thisAgent.y_jiggle=-y_jiggle;
+				pedDistancingState.adjustmentY=-y_jiggle;
 			}  else if (x_diff==0 && y_diff<0) { //move to the bottom
-				thisAgent.y_jiggle=y_jiggle;
+				pedDistancingState.adjustmentY=y_jiggle;
 			}
-			if (ped_collection.get(i).counter_tryingTime<=tryingTime){
-				pedGoTo.cancel(ped_collection.get(i));
+			boolean validAdjustment = true;
+			for (MarkupShape s : thisAgent.getNonLineObstaclesForCurrentLevel()) {
+				double targetX = thisAgent.getX() + pedDistancingState.adjustmentX;
+				double targetY = thisAgent.getY() + pedDistancingState.adjustmentY;
+				if (s.contains(targetX, targetY)) {		// Trying to move inside a markup shape
+					validAdjustment = false;
+					break;
+				}
+			}
+			if (validAdjustment && pedDistancingState.numAdjustmentAttempts<=tryingTime){
+				pedGoTo.cancel(thisAgent);
 			}
 		}
 	}
@@ -2955,7 +3027,7 @@ help for more details.]]></Text>
 					<ShowLabel>true</ShowLabel>
 					<Parameter>
 						<Name><![CDATA[ped]]></Name>
-						<Type><![CDATA[Customer]]></Type>
+						<Type><![CDATA[P]]></Type>
 					</Parameter>
 					<Body><![CDATA[var_cancel=true;
 pedGoTo.cancel(ped);
@@ -2971,14 +3043,11 @@ pedGoTo1.cancel(ped);]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[ped]]></Name>
-						<Type><![CDATA[Customer]]></Type>
-					</Parameter>
 					<Body><![CDATA[var_cancel=true;
 for (int i=0;i<ped_collection.size();i++){
-	pedGoTo.cancel(ped_collection.get(i));
-	pedGoTo1.cancel(ped_collection.get(i));
+	P currentPed = ped_collection.get(i);
+	pedGoTo.cancel(currentPed);
+	pedGoTo1.cancel(currentPed);
 }]]></Body>
 				</Function>
 			</Functions>
@@ -3038,6 +3107,9 @@ for (int i=0;i<ped_collection.size();i++){
 							<ClassName><![CDATA[PedGoTo]]></ClassName>
 							<ItemName><![CDATA[1412464601103]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[P]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
@@ -3088,7 +3160,7 @@ for (int i=0;i<ped_collection.size();i++){
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped.counter_tryingTime=0;]]></Code>
+								<Code><![CDATA[pedDistancingStateMap.get(ped).numAdjustmentAttempts=0;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3097,7 +3169,8 @@ for (int i=0;i<ped_collection.size();i++){
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped_collection.remove(ped);]]></Code>
+								<Code><![CDATA[ped_collection.remove(ped);
+pedDistancingStateMap.remove(ped);]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -3158,6 +3231,9 @@ for (int i=0;i<ped_collection.size();i++){
 							<ClassName><![CDATA[PedGoTo]]></ClassName>
 							<ItemName><![CDATA[1412464601103]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[P]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
@@ -3175,13 +3251,13 @@ for (int i=0;i<ped_collection.size();i++){
 						<Parameter>
 							<Name><![CDATA[locationX]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped.getX()+ped.x_jiggle]]></Code>
+								<Code><![CDATA[ped.getX()+pedDistancingStateMap.get(ped).adjustmentX]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[locationY]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped.getY()+ped.y_jiggle]]></Code>
+								<Code><![CDATA[ped.getY()+pedDistancingStateMap.get(ped).adjustmentY]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3269,6 +3345,9 @@ for (int i=0;i<ped_collection.size();i++){
 							<ClassName><![CDATA[SelectOutput]]></ClassName>
 							<ItemName><![CDATA[1412336242931]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[P]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
@@ -3292,7 +3371,7 @@ for (int i=0;i<ped_collection.size();i++){
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.counter_tryingTime++;]]></Code>
+								<Code><![CDATA[pedDistancingStateMap.get(agent).numAdjustmentAttempts++;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3301,7 +3380,9 @@ for (int i=0;i<ped_collection.size();i++){
 						<Parameter>
 							<Name><![CDATA[onExitFalse]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[var_cancel=false;]]></Code>
+								<Code><![CDATA[var_cancel=false;
+ped_collection.remove(agent);
+pedDistancingStateMap.remove(agent);]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -3363,7 +3444,7 @@ for (int i=0;i<ped_collection.size();i++){
 							<ItemName><![CDATA[1412336242930]]></ItemName>
 						</GenericParameterSubstituteReference>
 						<GenericParameterSubstituteValue Class="CodeValue">
-							<Code><![CDATA[Customer]]></Code>
+							<Code><![CDATA[P]]></Code>
 						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
@@ -3469,7 +3550,7 @@ for (int i=0;i<ped_collection.size();i++){
 							<ItemName><![CDATA[1412336243167]]></ItemName>
 						</GenericParameterSubstituteReference>
 						<GenericParameterSubstituteValue Class="CodeValue">
-							<Code><![CDATA[Customer]]></Code>
+							<Code><![CDATA[P]]></Code>
 						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
@@ -3482,7 +3563,8 @@ for (int i=0;i<ped_collection.size();i++){
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped_collection.add(agent);]]></Code>
+								<Code><![CDATA[ped_collection.add(agent);
+pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -3776,6 +3858,7 @@ for (int i=0;i<ped_collection.size();i++){
 			<Id>1589972199474</Id>
 			<Name><![CDATA[Customer]]></Name>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<Implements><![CDATA[DistancingPedestrian]]></Implements>
 			<StartupCode><![CDATA[//time_in_bank = getEngine().time();]]></StartupCode>
 			<DestroyCode><![CDATA[//time_in_bank = getEngine().time() - time_in_bank;
 
@@ -3941,6 +4024,7 @@ for (int i=0;i<ped_collection.size();i++){
 				<Variable Class="PlainVariable">
 					<Id>1589975894401</Id>
 					<Name><![CDATA[x_jiggle]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>80</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -3953,6 +4037,7 @@ for (int i=0;i<ped_collection.size();i++){
 				<Variable Class="PlainVariable">
 					<Id>1589975908297</Id>
 					<Name><![CDATA[y_jiggle]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>80</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -3965,6 +4050,7 @@ for (int i=0;i<ped_collection.size();i++){
 				<Variable Class="PlainVariable">
 					<Id>1591700249004</Id>
 					<Name><![CDATA[counter_tryingTime]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>80</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4040,6 +4126,32 @@ if (nearestCustomer!=null ) {
 ]]></Action>
 				</Event>
 			</Events>
+			<Functions>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1594899954196</Id>
+					<Name><![CDATA[getSocialDistanceMetres]]></Name>
+					<X>310</X><Y>290</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return 2.0;		// Fixed social distance for all customers]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[List<MarkupShape>]]></ReturnType>
+					<Id>1594899996153</Id>
+					<Name><![CDATA[getNonLineObstaclesForCurrentLevel]]></Name>
+					<X>310</X><Y>320</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return main.allNonLineObstacles;		// Return the list of such markup stored in Main]]></Body>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1589972199510</Id>
@@ -4512,6 +4624,36 @@ under certain conditions; see GNU GPL License for details.]]></Text>
 			</ModelTimeProperties>
 		</SimulationExperiment>	
 	</Experiments>
+	<JavaClasses>
+		<!--   =========   Java Class   ========  -->
+		<JavaClass>
+			<Id>1594897258298</Id>
+			<Name><![CDATA[DistancingPedestrian]]></Name>
+			<Text><![CDATA[public interface DistancingPedestrian
+{
+
+	/**
+	 * Get the social distance (in metres) this particular pedestrian is attempting to maintain.
+	 * 
+	 * @return The desired distance (in metres)
+	 */
+	double getSocialDistanceMetres();
+	
+	/**
+	 * Get all space markup elements for the pedestrian's current level which represent obstacles with non-zero area
+	 * (i.e., does not include lines such as Walls, rather than Rectangular Walls or Circular Walls). It is up to the implementer
+	 * how to maintain this information (e.g., AnyLogic ArrayList Collections per level with initial contents
+	 * of all relevant markup shapes for that level).
+	 * 
+	 * This is needed so that the PedDistancingMoveTo block can determine how to adjust the movement of socially-distancing
+	 * pedestrians without trying to move inside an obstacle (which would cause an AnyLogic error).
+	 * 
+	 * @return A list (e.g., ArrayList or LinkedList) of all relevant space markup elements for the agent's current level
+	 */
+	List<MarkupShape> getNonLineObstaclesForCurrentLevel();
+}]]></Text>
+		</JavaClass>
+	</JavaClasses>
 	<Libraries>
 		<!--   =========   Library   ========  -->
 		<Library>
