@@ -2969,7 +2969,8 @@ private class DistancingState {
 	DistancingState pedDistancingState = pedDistancingStateMap.get(thisAgent); 
 	double x1 = thisAgent.getX();
 	double y1 = thisAgent.getY();
-	P NearestPerson = thisAgent.getNearestAgent(ped_collection);
+	Agent NearestPerson = thisAgent.getNearestAgent(thisAgent.getPopulation());
+
 	if (NearestPerson!=null ) {
 		double x2 = NearestPerson.getX();
 		double y2 = NearestPerson.getY();
