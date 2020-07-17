@@ -102,7 +102,7 @@
 				<Length>100</Length>
 				<Rotation>0</Rotation>
 				<ScaleType>BASED_ON_LENGTH</ScaleType>
-				<ModelLength>2</ModelLength>
+				<ModelLength>10</ModelLength>
 				<LengthUnits>METER</LengthUnits>
 				<Scale>10</Scale>
 				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
@@ -124,6 +124,18 @@
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[scale.pixelsPerUnit(METER);]]></Code>
 						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1594983591332</Id>
+					<Name><![CDATA[lastGoToEnteredPed]]></Name>
+					<X>-140</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Customer]]></Type>        
 					</Properties>
 				</Variable>
 				<Variable Class="CollectionVariable">
@@ -157,7 +169,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[delay1]]></ItemName>
+						<ItemName><![CDATA[stayInCurrentLocation]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -190,7 +202,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[delay1]]></ItemName>
+						<ItemName><![CDATA[stayInCurrentLocation]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -200,11 +212,11 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[custom_MoveTo]]></ItemName>
+						<ItemName><![CDATA[distancedGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[port1]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
@@ -233,11 +245,11 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[custom_MoveTo]]></ItemName>
+						<ItemName><![CDATA[distancedGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[port]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
@@ -268,11 +280,11 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[custom_MoveTo]]></ItemName>
+						<ItemName><![CDATA[distancedGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[port]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
@@ -303,11 +315,11 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[custom_MoveTo]]></ItemName>
+						<ItemName><![CDATA[distancedGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[port]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
@@ -328,11 +340,11 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[custom_MoveTo]]></ItemName>
+						<ItemName><![CDATA[distancedGoTo]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[port]]></ItemName>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
@@ -361,17 +373,17 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[custom_MoveTo]]></ItemName>
+						<ItemName><![CDATA[distancedGoTo]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[port2]]></ItemName>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[delay1]]></ItemName>
+						<ItemName><![CDATA[stayInCurrentLocation]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -700,7 +712,7 @@
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1589965887906</Id>
-					<Name><![CDATA[delay1]]></Name>
+					<Name><![CDATA[stayInCurrentLocation]]></Name>
 					<X>470</X><Y>450</Y>
 					<Label><X>-5</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -865,7 +877,7 @@
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1589978488618</Id>
-					<Name><![CDATA[custom_MoveTo]]></Name>
+					<Name><![CDATA[distancedGoTo]]></Name>
 					<X>340</X><Y>460</Y>
 					<Label><X>-25</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -873,12 +885,12 @@
 					<ShowLabel>true</ShowLabel>
 					<ActiveObjectClass>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 					</ActiveObjectClass>
 					<GenericParameterSubstitute>
 						<GenericParameterSubstituteReference>
 							<PackageName><![CDATA[pedMoveTo]]></PackageName>
-							<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+							<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 							<ItemName><![CDATA[1589970288655]]></ItemName>
 						</GenericParameterSubstituteReference>
 						<GenericParameterSubstituteValue Class="CodeValue">
@@ -887,10 +899,13 @@
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
-							<Name><![CDATA[reachTarget]]></Name>
+							<Name><![CDATA[mode]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[targetType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[PedConstants.LocationType.AREA]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[targetLine]]></Name>
@@ -905,31 +920,40 @@
 							<Name><![CDATA[targetRoute]]></Name>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[separatingDistance]]></Name>
+							<Name><![CDATA[targetPointX]]></Name>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[scannigTime]]></Name>
+							<Name><![CDATA[targetPointY]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[scanningInterval]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[movementAdjustment]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[adjustmentDelay]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxNumAdjustments]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[0.5]]></Code>
+								<Code><![CDATA[5]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[x_jiggle]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[10]]></Code>
-							</Value>
+							<Name><![CDATA[reachTolerance]]></Name>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[y_jiggle]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[10]]></Code>
-							</Value>
+							<Name><![CDATA[onEnterAction]]></Name>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[jiggle_delay]]></Name>
+							<Name><![CDATA[onExitAction]]></Name>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[tryingTime]]></Name>
+							<Name><![CDATA[onCancelAction]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onRemoveAction]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1778,7 +1802,7 @@
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<LabelText><![CDATA[inject]]></LabelText>
+						<LabelText><![CDATA[Add Ped]]></LabelText>
 					</ExtendedProperties>
 				</Control>
 				<EmbeddedObjectPresentation>
@@ -1866,7 +1890,7 @@
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<LabelText><![CDATA[inject]]></LabelText>
+						<LabelText><![CDATA[Add Ped]]></LabelText>
 					</ExtendedProperties>
 				</Control>
 				<Control Type="Button">
@@ -1887,7 +1911,7 @@
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<LabelText><![CDATA[inject]]></LabelText>
+						<LabelText><![CDATA[Add Ped]]></LabelText>
 					</ExtendedProperties>
 				</Control>
 				<Control Type="Button">
@@ -1908,7 +1932,7 @@
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<LabelText><![CDATA[inject]]></LabelText>
+						<LabelText><![CDATA[Add Ped]]></LabelText>
 					</ExtendedProperties>
 				</Control>
 				<Control Type="Button">
@@ -1921,15 +1945,16 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="100" Height="30">
+					<BasicProperties Width="120" Height="30">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[custom_MoveTo.cancel(custom_MoveTo.ped_collection.get(0));]]></ActionCode>
+						<EnableExpression><![CDATA[lastGoToEnteredPed != null]]></EnableExpression>
+						<ActionCode><![CDATA[distancedGoTo.cancel(lastGoToEnteredPed);]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<LabelText><![CDATA[Cancel]]></LabelText>
+						<LabelText><![CDATA[Cancel Last Ped]]></LabelText>
 					</ExtendedProperties>
 				</Control>
 				<Text>
@@ -1966,7 +1991,7 @@
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[1. Click onto the buttons to spawn a person]]></Text>
+					<Text><![CDATA[1. Click buttons to spawn pedestrians at that corner.]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>16</Size>
@@ -1987,8 +2012,8 @@
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[2. The person will walk towards the green area
-     in the middle]]></Text>
+					<Text><![CDATA[2. The pedestrian will move towards the green area
+     in the middle.]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>16</Size>
@@ -2009,8 +2034,8 @@
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[3. Spawn a few people to see the effect of
-    the social distancing rule]]></Text>
+					<Text><![CDATA[3. Spawn a few pedestrians to see the effects of
+    the social distancing.]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>16</Size>
@@ -2031,8 +2056,8 @@
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Try out different parameters and see the effect!
-Hover on the input parameters to see the descriptions.]]></Text>
+					<Text><![CDATA[Try out different property settings and see the effect!
+Hover on the properties to see descriptions.]]></Text>
 					<Font>
 						<Name>Arial Rounded MT</Name>
 						<Size>16</Size>
@@ -2065,7 +2090,7 @@ Hover on the input parameters to see the descriptions.]]></Text>
 				<Text>
 					<Id>1594312124988</Id>
 					<Name><![CDATA[text5]]></Name>
-					<X>525</X><Y>522</Y>
+					<X>570</X><Y>520</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2075,9 +2100,8 @@ Hover on the input parameters to see the descriptions.]]></Text>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[This button is just to demonstrate that the agent movement can be 
-cancelled anytime just like the original pedestrian block, see AnyLogic
-help for more details.]]></Text>
+					<Text><![CDATA[These buttons are to demonstrate that pedestrians can be cancelled
+from the custom PedGoTo block just as for the standard one.]]></Text>
 					<Font>
 						<Name>Arial Rounded MT</Name>
 						<Size>16</Size>
@@ -2088,7 +2112,7 @@ help for more details.]]></Text>
 				<Image>
 					<Id>1594312124990</Id>
 					<Name><![CDATA[image1]]></Name>
-					<X>480</X><Y>520</Y>
+					<X>520</X><Y>520</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2097,7 +2121,7 @@ help for more details.]]></Text>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Width>45</Width>
-					<Height>51.04</Height>
+					<Height>70</Height>
 					<Rotation>30.0</Rotation>
 					<ImageFiles>
 						<ImageResourceReference>
@@ -2126,6 +2150,27 @@ help for more details.]]></Text>
 					<RadiusX>30</RadiusX>
 					<RadiusY>20</RadiusY>
 				</OvalWall>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1594983660233</Id>
+					<Name><![CDATA[button8]]></Name>
+					<X>350</X><Y>620</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="120" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[distancedGoTo.cancelAll();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[Cancel All Peds]]></LabelText>
+					</ExtendedProperties>
+				</Control>
 			</Presentation>
 
 				</Level>
@@ -2135,10 +2180,12 @@ help for more details.]]></Text>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
 			<Id>1589970288657</Id>
-			<Name><![CDATA[PedDistancingMoveTo]]></Name>
+			<Name><![CDATA[PedDistancingGoTo]]></Name>
 			<AdditionalClassCode><![CDATA[// Private class (effectively just a data structure) used to hold state information (per pedestrian in the block)
 // relating to movement adjustments they have made / will be making
 private class DistancingState {
+	private boolean userCancellation = false;
+	AdjustmentScan nextScanEvent = null;
 	private double adjustmentX;
 	private double adjustmentY;
 	private int numAdjustmentAttempts = 0;
@@ -2151,7 +2198,7 @@ private class DistancingState {
 				<GenericParameterValue Class="CodeValue">
 					<Code><![CDATA[P extends Agent & DistancingPedestrian]]></Code>
 				</GenericParameterValue>
-				<GenericParameterLabel><![CDATA[Pedestrian agent type (must implement DistancingPedestrian)]]></GenericParameterLabel>
+				<GenericParameterLabel><![CDATA[Pedestrian agent type]]></GenericParameterLabel>
 			</GenericParameter>
 			<FlowChartsUsage>ENTITY</FlowChartsUsage>
 			<SamplesToKeep>100</SamplesToKeep>
@@ -2221,7 +2268,7 @@ private class DistancingState {
 			<ScaleRuler>
 				<Id>1589970288653</Id>
 				<Name><![CDATA[scale]]></Name>
-				<X>0</X><Y>-150</Y>
+				<X>-160</X><Y>-280</Y>
 				<PublicFlag>false</PublicFlag>
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
@@ -2238,92 +2285,52 @@ private class DistancingState {
 			<ConnectionsId>1589970288652</ConnectionsId>
 			<Variables>
 				<Variable Class="PlainVariable">
-					<Id>1591700194233</Id>
-					<Name><![CDATA[var_cancel]]></Name>
-					<X>-200</X><Y>450</Y>
+					<Id>1594916881132</Id>
+					<Name><![CDATA[ADJUSTMENT_DISTANCE_PIXELS]]></Name>
+					<X>-320</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="private" StaticVariable="false">
-						<Type><![CDATA[boolean]]></Type>        
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="private" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[false]]></Code>
+							<Code><![CDATA[getOwner().getScale().toPixels(movementAdjustment(LengthUnits.METER), LengthUnits.METER)]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1591700194243</Id>
-					<Name><![CDATA[reachTarget]]></Name>
-					<Description><![CDATA[Select whether you want the person to go to a target location or follow a predefined route.]]></Description>
-					<X>-390</X><Y>210</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[boolean]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[true]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1591700194241</Id>
-							<Label><![CDATA[Reach Target(Supersede target type)]]></Label>
-							<EditorContolType>COMBO</EditorContolType>
-							<PredefParamValue>
-								<Id>1591700194239</Id>
-								<Name><![CDATA[Reach Target]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[true]]></Code>
-								</Value>
-							</PredefParamValue>
-							<PredefParamValue>
-								<Id>1591700194240</Id>
-								<Name><![CDATA[Follow Route]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[false]]></Code>
-								</Value>
-							</PredefParamValue>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
 					<Id>1591700194248</Id>
-					<Name><![CDATA[targetType]]></Name>
-					<Description><![CDATA[Select whether the person will go to the predefined target area or target line.]]></Description>
-					<X>-390</X><Y>60</Y>
+					<Name><![CDATA[mode]]></Name>
+					<Description><![CDATA[Movement mode as per the standard PedGoTo block]]></Description>
+					<X>40</X><Y>-240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[boolean]]></Type>
+						<Type><![CDATA[PedConstants.GoToMode]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[true]]></Code>
+							<Code><![CDATA[PedConstants.GoToMode.ReachTarget]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1591700194246</Id>
-							<Label><![CDATA[Target Type]]></Label>
-							<EditorContolType>COMBO</EditorContolType>
+							<Label><![CDATA[Mode]]></Label>
+							<EditorContolType>RADIO_BUTTONS</EditorContolType>
 							<PredefParamValue>
 								<Id>1591700194244</Id>
-								<Name><![CDATA[Target Area]]></Name>
+								<Name><![CDATA[Reach Target]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[true]]></Code>
+									<Code><![CDATA[PedConstants.GoToMode.ReachTarget]]></Code>
 								</Value>
 							</PredefParamValue>
 							<PredefParamValue>
 								<Id>1591700194245</Id>
-								<Name><![CDATA[Target Line]]></Name>
+								<Name><![CDATA[Follow Route]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[false]]></Code>
+									<Code><![CDATA[PedConstants.GoToMode.FollowRoute]]></Code>
 								</Value>
 							</PredefParamValue>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
@@ -2333,10 +2340,65 @@ private class DistancingState {
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1591700194251</Id>
+					<Id>1594909597191</Id>
+					<Name><![CDATA[targetType]]></Name>
+					<Description><![CDATA[Target type as per the standard PedGoTo block]]></Description>
+					<X>40</X><Y>-220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[PedConstants.LocationType]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[PedConstants.LocationType.LINE]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1594909597189</Id>
+							<Label><![CDATA[Target]]></Label>
+							<EditorContolType>RADIO_BUTTONS</EditorContolType>
+							<HideCondition>
+								<Id>0</Id>
+								<ParameterId>1591700194248</ParameterId>
+								<Operation>EQUALS</Operation>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.GoToMode.FollowRoute]]></Code>
+								</Value>
+							</HideCondition>
+							<PredefParamValue>
+								<Id>0</Id>
+								<Name><![CDATA[line]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.LocationType.LINE]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>0</Id>
+								<Name><![CDATA[point (x,y)]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.LocationType.POINT]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>0</Id>
+								<Name><![CDATA[area]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.LocationType.AREA]]></Code>
+								</Value>
+							</PredefParamValue>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1594911272232</Id>
 					<Name><![CDATA[targetLine]]></Name>
-					<Description><![CDATA[Select the target line for the person to move to (only valid if Target Line is selected as the Target Type).]]></Description>
-					<X>-390</X><Y>90</Y>
+					<Description><![CDATA[Target line as per the standard PedGoTo block]]></Description>
+					<X>40</X><Y>-200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2346,9 +2408,25 @@ private class DistancingState {
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<ParameterEditor>
-							<Id>1591700194249</Id>
-							<Label><![CDATA[Target Line]]></Label>
+							<Id>1594911272230</Id>
+							<Label><![CDATA[Target line]]></Label>
 							<EditorContolType>ELEMENT_CHOOSER</EditorContolType>
+							<HideCondition>
+								<Id>1594911272228</Id>
+								<ParameterId>1591700194248</ParameterId>
+								<Operation>EQUALS</Operation>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.GoToMode.FollowRoute]]></Code>
+								</Value>
+							</HideCondition>
+							<HideCondition>
+								<Id>1594911272229</Id>
+								<ParameterId>1594909597191</ParameterId>
+								<Operation>NOT_EQUALS</Operation>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.LocationType.LINE]]></Code>
+								</Value>
+							</HideCondition>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -2356,10 +2434,10 @@ private class DistancingState {
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1591700194254</Id>
+					<Id>1594911272237</Id>
 					<Name><![CDATA[targetArea]]></Name>
-					<Description><![CDATA[Select the target area for the person to move to (only valid if Target Area is selected as the Target Type).]]></Description>
-					<X>-390</X><Y>120</Y>
+					<Description><![CDATA[Target area as per the standard PedGoTo block]]></Description>
+					<X>40</X><Y>-140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2369,9 +2447,25 @@ private class DistancingState {
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<ParameterEditor>
-							<Id>1591700194252</Id>
-							<Label><![CDATA[Target Area]]></Label>
+							<Id>1594911272235</Id>
+							<Label><![CDATA[Area]]></Label>
 							<EditorContolType>ELEMENT_CHOOSER</EditorContolType>
+							<HideCondition>
+								<Id>1594911272233</Id>
+								<ParameterId>1591700194248</ParameterId>
+								<Operation>EQUALS</Operation>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.GoToMode.FollowRoute]]></Code>
+								</Value>
+							</HideCondition>
+							<HideCondition>
+								<Id>1594911272234</Id>
+								<ParameterId>1594909597191</ParameterId>
+								<Operation>NOT_EQUALS</Operation>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.LocationType.AREA]]></Code>
+								</Value>
+							</HideCondition>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -2379,10 +2473,10 @@ private class DistancingState {
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1591700194257</Id>
+					<Id>1594911272246</Id>
 					<Name><![CDATA[targetRoute]]></Name>
-					<Description><![CDATA[Select the route for the person to follow (only valid if Follow Route has been chosen).]]></Description>
-					<X>-390</X><Y>150</Y>
+					<Description><![CDATA[Target route (Pathway element) as per the standard PedGoTo block]]></Description>
+					<X>40</X><Y>-120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2392,9 +2486,17 @@ private class DistancingState {
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<ParameterEditor>
-							<Id>1591700194255</Id>
+							<Id>1594911272244</Id>
 							<Label><![CDATA[Route]]></Label>
 							<EditorContolType>ELEMENT_CHOOSER</EditorContolType>
+							<HideCondition>
+								<Id>1594911272243</Id>
+								<ParameterId>1591700194248</ParameterId>
+								<Operation>EQUALS</Operation>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.GoToMode.ReachTarget]]></Code>
+								</Value>
+							</HideCondition>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -2402,25 +2504,38 @@ private class DistancingState {
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1591700194260</Id>
-					<Name><![CDATA[separatingDistance]]></Name>
-					<Description><![CDATA[The distance between two people under the social distancing rules.]]></Description>
-					<X>-270</X><Y>60</Y>
+					<Id>1594911272268</Id>
+					<Name><![CDATA[targetPointX]]></Name>
+					<Description><![CDATA[Target point X coordinate as per the standard PedGoTo block]]></Description>
+					<X>40</X><Y>-180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+					<Properties SaveInSnapshot="true" ModificatorType="DYNAMIC">
 						<Type><![CDATA[double]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[2.0]]></Code>
-						</DefaultValue>
 						<ParameterEditor>
-							<Id>1591700194258</Id>
-							<Label><![CDATA[Zone of protection (meters)]]></Label>
+							<Id>1594911272266</Id>
+							<Label><![CDATA[X]]></Label>
 							<EditorContolType>TEXT_BOX</EditorContolType>
+							<HideCondition>
+								<Id>1594911272264</Id>
+								<ParameterId>1591700194248</ParameterId>
+								<Operation>EQUALS</Operation>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.GoToMode.FollowRoute]]></Code>
+								</Value>
+							</HideCondition>
+							<HideCondition>
+								<Id>1594911272265</Id>
+								<ParameterId>1594909597191</ParameterId>
+								<Operation>NOT_EQUALS</Operation>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.LocationType.POINT]]></Code>
+								</Value>
+							</HideCondition>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -2428,103 +2543,96 @@ private class DistancingState {
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1591700194263</Id>
-					<Name><![CDATA[scannigTime]]></Name>
-					<Description><![CDATA[This indicates how often the person (or agent) will check if there is something around itself. There will be a compromise between machine performance and model performance. The more frequent the scanning time the better.]]></Description>
-					<X>-270</X><Y>90</Y>
+					<Id>1594911272273</Id>
+					<Name><![CDATA[targetPointY]]></Name>
+					<Description><![CDATA[Target point Y coordinate as per the standard PedGoTo block]]></Description>
+					<X>40</X><Y>-160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="DYNAMIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1594911272271</Id>
+							<Label><![CDATA[Y]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<HideCondition>
+								<Id>1594911272269</Id>
+								<ParameterId>1591700194248</ParameterId>
+								<Operation>EQUALS</Operation>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.GoToMode.FollowRoute]]></Code>
+								</Value>
+							</HideCondition>
+							<HideCondition>
+								<Id>1594911272270</Id>
+								<ParameterId>1594909597191</ParameterId>
+								<Operation>NOT_EQUALS</Operation>
+								<Value Class="CodeValue">
+									<Code><![CDATA[PedConstants.LocationType.POINT]]></Code>
+								</Value>
+							</HideCondition>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1594911312644</Id>
+					<Name><![CDATA[scanningInterval]]></Name>
+					<Description><![CDATA[How often moving pedestrians will scan for close-by pedestrians to make movement corrections.
+Smaller values will give more precise movements at the expense of computational effort]]></Description>
+					<X>220</X><Y>-240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[TIME]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[SECOND]]></UnitOfValue>
 						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
+						<DefaultValue Class="CodeUnitValue">
 							<Code><![CDATA[2]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1591700194261</Id>
-							<Label><![CDATA[Scanning Recurence Time (seconds)]]></Label>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<Id>1594911312642</Id>
+							<Label><![CDATA[Scanning interval]]></Label>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
+							<DelimeterType>SEPARATE_SECTION</DelimeterType>
+							<StartSection><![CDATA[Social distancing rules]]></StartSection>
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1591700194266</Id>
-					<Name><![CDATA[x_jiggle]]></Name>
+					<Id>1594911312647</Id>
+					<Name><![CDATA[movementAdjustment]]></Name>
 					<Description><![CDATA[This determines the amount of distance the agent will try to jiggle horizontally when it sees an object within the zone of protection.]]></Description>
-					<X>-270</X><Y>120</Y>
+					<X>220</X><Y>-220</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[LENGTH]]></UnitType>
+						<UnitOfValue Class="LengthUnits"><![CDATA[METER]]></UnitOfValue>
 						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[5]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1591700194264</Id>
-							<Label><![CDATA[X Jiggle]]></Label>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1591700194269</Id>
-					<Name><![CDATA[y_jiggle]]></Name>
-					<Description><![CDATA[This determines the amount of distance the agent will try to jiggle vertically when it sees an object within the zone of protection.]]></Description>
-					<X>-270</X><Y>140</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[5]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1591700194267</Id>
-							<Label><![CDATA[Y Jiggle]]></Label>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1591700194272</Id>
-					<Name><![CDATA[jiggle_delay]]></Name>
-					<Description><![CDATA[This determines the amount of time the agent will pause after moving away from another agent.]]></Description>
-					<X>-270</X><Y>160</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
+						<DefaultValue Class="CodeUnitValue">
 							<Code><![CDATA[0.5]]></Code>
+							<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1591700194270</Id>
-							<Label><![CDATA[Jiggle Recovery (seconds)]]></Label>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<Id>1594911312645</Id>
+							<Label><![CDATA[Movement adjustment]]></Label>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -2532,10 +2640,40 @@ private class DistancingState {
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1591700194277</Id>
-					<Name><![CDATA[tryingTime]]></Name>
-					<Description><![CDATA[Number of times the person will try to follow thedistancing rule before giving up. For example if the target area is too small to accomodate 2 people with the 2 meters social distancing rule, the person will try to follow that rule for n-times before forcing itself to squish into the target)]]></Description>
-					<X>-390</X><Y>180</Y>
+					<Id>1594911312653</Id>
+					<Name><![CDATA[adjustmentDelay]]></Name>
+					<Description><![CDATA[How long agents will delay following making a movement adjustment before they will make another]]></Description>
+					<X>220</X><Y>-200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[TIME]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[SECOND]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[0.5]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1594911312651</Id>
+							<Label><![CDATA[Post-adjustment delay]]></Label>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1594911312658</Id>
+					<Name><![CDATA[maxNumAdjustments]]></Name>
+					<Description><![CDATA[Max number of movement adjustments the pedestrian will make en route to its target.
+Following this, they will move ignoring their desired distancing (which ensures they will
+get to targets which aren't possible without 'breaking' distancing)]]></Description>
+					<X>220</X><Y>-180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2548,23 +2686,143 @@ private class DistancingState {
 							<Code><![CDATA[3]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1591700194275</Id>
-							<Label><![CDATA[Tries social distancing for X times:]]></Label>
-							<EditorContolType>COMBO</EditorContolType>
-							<PredefParamValue>
-								<Id>1591700194273</Id>
-								<Name><![CDATA[Reach Target]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[true]]></Code>
-								</Value>
-							</PredefParamValue>
-							<PredefParamValue>
-								<Id>1591700194274</Id>
-								<Name><![CDATA[Follow Route]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[false]]></Code>
-								</Value>
-							</PredefParamValue>
+							<Id>1594911312656</Id>
+							<Label><![CDATA[Max movement adjustments]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1594987228123</Id>
+					<Name><![CDATA[reachTolerance]]></Name>
+					<Description><![CDATA[Reach tolerance as per standard PedGoTo block]]></Description>
+					<X>450</X><Y>-240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[LENGTH]]></UnitType>
+						<UnitOfValue Class="LengthUnits"><![CDATA[METER]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[0.25]]></Code>
+							<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1594987228121</Id>
+							<Label><![CDATA[Reach tolerance]]></Label>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>SEPARATE_SECTION</DelimeterType>
+							<StartSection><![CDATA[Advanced]]></StartSection>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1594987236883</Id>
+					<Name><![CDATA[onEnterAction]]></Name>
+					<X>450</X><Y>-210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="ACTION">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<MethodArgument>
+							<Name><![CDATA[ped]]></Name>
+							<Type><![CDATA[P]]></Type>
+						</MethodArgument>
+						<ParameterEditor>
+							<Id>1594987236881</Id>
+							<Label><![CDATA[On enter]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>SEPARATE_SECTION</DelimeterType>
+							<StartSection><![CDATA[Actions]]></StartSection>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1594987236886</Id>
+					<Name><![CDATA[onExitAction]]></Name>
+					<X>450</X><Y>-190</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="ACTION">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<MethodArgument>
+							<Name><![CDATA[ped]]></Name>
+							<Type><![CDATA[P]]></Type>
+						</MethodArgument>
+						<ParameterEditor>
+							<Id>1594987236884</Id>
+							<Label><![CDATA[On exit]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1594987236889</Id>
+					<Name><![CDATA[onCancelAction]]></Name>
+					<X>450</X><Y>-170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="ACTION">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<MethodArgument>
+							<Name><![CDATA[ped]]></Name>
+							<Type><![CDATA[P]]></Type>
+						</MethodArgument>
+						<ParameterEditor>
+							<Id>1594987236887</Id>
+							<Label><![CDATA[On cancel]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1594987236892</Id>
+					<Name><![CDATA[onRemoveAction]]></Name>
+					<X>450</X><Y>-150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="ACTION">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<MethodArgument>
+							<Name><![CDATA[ped]]></Name>
+							<Type><![CDATA[P]]></Type>
+						</MethodArgument>
+						<ParameterEditor>
+							<Id>1594987236890</Id>
+							<Label><![CDATA[On remove]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -2573,28 +2831,28 @@ private class DistancingState {
 				</Variable>
 				<Variable Class="CollectionVariable">
 					<Id>1591700194225</Id>
-					<Name><![CDATA[ped_collection]]></Name>
-					<X>-390</X><Y>440</Y>
+					<Name><![CDATA[pedsInBlock]]></Name>
+					<X>-320</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+					<Properties SaveInSnapshot="true" AccessType="private" StaticVariable="false">
+						<CollectionClass><![CDATA[LinkedList]]></CollectionClass>
 						<ElementClass><![CDATA[P]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
 				</Variable>
 				<Variable Class="CollectionVariable">
-					<Id>1594897959079</Id>
+					<Id>1594982262159</Id>
 					<Name><![CDATA[pedDistancingStateMap]]></Name>
-					<X>-390</X><Y>470</Y>
+					<X>-320</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+					<Properties SaveInSnapshot="true" AccessType="private" StaticVariable="false">
 						<CollectionClass><![CDATA[LinkedHashMap]]></CollectionClass>
 						<ElementClass><![CDATA[P]]></ElementClass>
 						<ValueElementClass><![CDATA[DistancingState]]></ValueElementClass>
@@ -2651,7 +2909,7 @@ private class DistancingState {
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2678,7 +2936,7 @@ private class DistancingState {
 					<SourceId>1591700194304</SourceId>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[plainTransfer]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2703,7 +2961,7 @@ private class DistancingState {
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2713,7 +2971,7 @@ private class DistancingState {
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[selectOutput]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2737,7 +2995,7 @@ private class DistancingState {
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[selectOutput]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2747,7 +3005,7 @@ private class DistancingState {
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo1]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2770,7 +3028,7 @@ private class DistancingState {
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[selectOutput]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2789,44 +3047,16 @@ private class DistancingState {
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1591700194337</Id>
-					<Name><![CDATA[connector7]]></Name>
-					<X>185</X><Y>160</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
-						<ItemName><![CDATA[pedGoTo1]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
-						<ClassName><![CDATA[PedGoTo]]></ClassName>
-						<ItemName><![CDATA[ccl]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetId>1591700194320</TargetId>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>25</Y></Point>
-						<Point><X>40</X><Y>25</Y></Point>
-						<Point><X>40</X><Y>-135</Y></Point>
-						<Point><X>-185</X><Y>-135</Y></Point>
-						<Point><X>-185</X><Y>-150</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1591700194339</Id>
 					<Name><![CDATA[connector2]]></Name>
-					<X>10</X><Y>0</Y>
+					<X>195</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo1]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2836,8 +3066,8 @@ private class DistancingState {
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
-						<ItemName><![CDATA[delay1]]></ItemName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
+						<ItemName><![CDATA[postAdjustmentDelay]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -2845,22 +3075,22 @@ private class DistancingState {
 						<ItemName><![CDATA[in]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>185</X><Y>150</Y></Point>
-						<Point><X>260</X><Y>150</Y></Point>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>105</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1591700194341</Id>
 					<Name><![CDATA[connector8]]></Name>
-					<X>10</X><Y>0</Y>
+					<X>340</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
-						<ItemName><![CDATA[delay1]]></ItemName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
+						<ItemName><![CDATA[postAdjustmentDelay]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -2869,7 +3099,7 @@ private class DistancingState {
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2878,12 +3108,12 @@ private class DistancingState {
 						<ItemName><![CDATA[in]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>300</X><Y>150</Y></Point>
-						<Point><X>340</X><Y>150</Y></Point>
-						<Point><X>340</X><Y>200</Y></Point>
-						<Point><X>25</X><Y>200</Y></Point>
-						<Point><X>25</X><Y>80</Y></Point>
-						<Point><X>55</X><Y>80</Y></Point>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>50</Y></Point>
+						<Point><X>-305</X><Y>50</Y></Point>
+						<Point><X>-305</X><Y>-70</Y></Point>
+						<Point><X>-275</X><Y>-70</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2896,7 +3126,7 @@ private class DistancingState {
 					<ShowLabel>false</ShowLabel>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[plainTransfer]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
@@ -2906,7 +3136,7 @@ private class DistancingState {
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
-						<ClassName><![CDATA[PedDistancingMoveTo]]></ClassName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
 						<ItemName><![CDATA[pedGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2919,109 +3149,109 @@ private class DistancingState {
 						<Point><X>65</X><Y>80</Y></Point>
 					</Points>
 				</Connector>
+				<Connector>
+					<Id>1594979132581</Id>
+					<Name><![CDATA[connector4]]></Name>
+					<X>185</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[pedMoveTo]]></PackageName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
+						<ItemName><![CDATA[pedGoTo1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
+						<ClassName><![CDATA[PedGoTo]]></ClassName>
+						<ItemName><![CDATA[ccl]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[pedMoveTo]]></PackageName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
+						<ItemName><![CDATA[selectOutput1]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>25</Y></Point>
+						<Point><X>35</X><Y>25</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1594979132582</Id>
+					<Name><![CDATA[connector7]]></Name>
+					<X>240</X><Y>185</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[pedMoveTo]]></PackageName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
+						<ItemName><![CDATA[selectOutput1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outT]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetId>1591700194320</TargetId>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>20</X><Y>0</Y></Point>
+						<Point><X>20</X><Y>-160</Y></Point>
+						<Point><X>-240</X><Y>-160</Y></Point>
+						<Point><X>-240</X><Y>-175</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1594979213975</Id>
+					<Name><![CDATA[connector10]]></Name>
+					<X>230</X><Y>195</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[pedMoveTo]]></PackageName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
+						<ItemName><![CDATA[selectOutput1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outF]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[pedMoveTo]]></PackageName>
+						<ClassName><![CDATA[PedDistancingGoTo]]></ClassName>
+						<ItemName><![CDATA[postAdjustmentDelay]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Delay]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>25</Y></Point>
+						<Point><X>50</X><Y>25</Y></Point>
+						<Point><X>50</X><Y>-45</Y></Point>
+						<Point><X>70</X><Y>-45</Y></Point>
+					</Points>
+				</Connector>
 			</Connectors>
-			<Events>
-				<Event>
-					<Id>1591700194236</Id>
-					<Name><![CDATA[scanning]]></Name>
-					<X>-200</X><Y>405</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties TriggerType="timeout" Mode="cyclic">
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
-						</Timeout>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
-						</Rate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1590048000000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[scannigTime]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-						</RecurrenceCode>
-						<Condition><![CDATA[false]]></Condition>
-					</Properties>
-					<Action><![CDATA[walkAway();]]></Action>
-				</Event>
-			</Events>
-			<Functions>
-				<Function AccessType="private" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1591700194227</Id>
-					<Name><![CDATA[walkAway]]></Name>
-					<X>-200</X><Y>430</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[for (int i=0;i<ped_collection.size();i++){
-	P thisAgent = ped_collection.get(i);
-	DistancingState pedDistancingState = pedDistancingStateMap.get(thisAgent); 
-	double x1 = thisAgent.getX();
-	double y1 = thisAgent.getY();
-	Agent NearestPerson = thisAgent.getNearestAgent(thisAgent.getPopulation());
-
-	if (NearestPerson!=null ) {
-		double x2 = NearestPerson.getX();
-		double y2 = NearestPerson.getY();
-		
-		double x_diff = x1-x2;
-		double y_diff = y1-y2;
-		double distance_cus = Math.sqrt(Math.pow(x_diff, 2)+Math.pow(y_diff,2))/main.scaleFactor; //px per meter
-		if (distance_cus < separatingDistance) {
-			if (x_diff<0 && y_diff>0){ //move to lower left hand corner
-				pedDistancingState.adjustmentX=-x_jiggle;
-				pedDistancingState.adjustmentY=y_jiggle;
-			} else if (x_diff>0 && y_diff<0) { //move to upper right hand corner
-				pedDistancingState.adjustmentX=x_jiggle;
-				pedDistancingState.adjustmentY=-y_jiggle;
-			} else if (x_diff<0 && y_diff<0) { //move to upper left hand corner
-				pedDistancingState.adjustmentX=-x_jiggle;
-				pedDistancingState.adjustmentY=-y_jiggle;
-			}  else if (x_diff>0 && y_diff>0) { //move to upper left hand corner
-				pedDistancingState.adjustmentX=x_jiggle;
-				pedDistancingState.adjustmentY=y_jiggle;
-			}  else if (x_diff<0 && y_diff==0) { //move to the left
-				pedDistancingState.adjustmentX=-x_jiggle;
-			}  else if (x_diff>0 && y_diff==0) { //move to the right
-				pedDistancingState.adjustmentX=x_jiggle;
-			}  else if (x_diff==0 && y_diff<0) { //move to the top
-				pedDistancingState.adjustmentY=-y_jiggle;
-			}  else if (x_diff==0 && y_diff<0) { //move to the bottom
-				pedDistancingState.adjustmentY=y_jiggle;
-			}
-			boolean validAdjustment = true;
-			for (MarkupShape s : thisAgent.getNonLineObstaclesForCurrentLevel()) {
-				double targetX = thisAgent.getX() + pedDistancingState.adjustmentX;
-				double targetY = thisAgent.getY() + pedDistancingState.adjustmentY;
-				if (s.contains(targetX, targetY)) {		// Trying to move inside a markup shape
-					validAdjustment = false;
-					break;
-				}
-			}
-			if (validAdjustment && pedDistancingState.numAdjustmentAttempts<=tryingTime){
-				pedGoTo.cancel(thisAgent);
-			}
-		}
-	}
-}]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1591700194229</Id>
-					<Name><![CDATA[cancel]]></Name>
-					<X>-390</X><Y>420</Y>
+			<DynamicEvents>
+				<DynamicEventClass>
+					<Id>1594918361759</Id>
+					<Name><![CDATA[StopAdjustmentMovement]]></Name>
+					<X>-320</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3030,33 +3260,226 @@ private class DistancingState {
 						<Name><![CDATA[ped]]></Name>
 						<Type><![CDATA[P]]></Type>
 					</Parameter>
-					<Body><![CDATA[var_cancel=true;
+					<Action><![CDATA[if (pedGoTo1.contains(ped)) {		// If still doing the adjustment movement
+	pedGoTo1.cancel(ped);
+}]]></Action>
+				</DynamicEventClass>
+				<DynamicEventClass>
+					<Id>1594979752275</Id>
+					<Name><![CDATA[AdjustmentScan]]></Name>
+					<X>-320</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[ped]]></Name>
+						<Type><![CDATA[P]]></Type>
+					</Parameter>
+					<Action><![CDATA[DistancingState pedDistancingState = pedDistancingStateMap.get(ped); 
+boolean willAdjust = checkForAdjustment(ped, pedDistancingState);
+
+// Create next scan in the chain if the ped is not going to do an adjustment
+if (!willAdjust) {
+	pedDistancingState.nextScanEvent = create_AdjustmentScan(scanningInterval, TimeUnits.SECOND, ped);
+}]]></Action>
+				</DynamicEventClass>
+			</DynamicEvents>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1591700194229</Id>
+					<Name><![CDATA[cancel]]></Name>
+					<X>-320</X><Y>-50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[ped]]></Name>
+						<Type><![CDATA[P]]></Type>
+					</Parameter>
+					<Body><![CDATA[DistancingState state = pedDistancingStateMap.get(ped);
+state.userCancellation = true;
+
+// Could be in either of these blocks so cancel from both. (No return to indicate whether they were there or not.)
 pedGoTo.cancel(ped);
-pedGoTo1.cancel(ped);]]></Body>
+pedGoTo1.cancel(ped);
+
+// If it was in the Delay the cancellation will get actioned when it re-enters the first PedGoTo block
+
+onCancelAction(ped);		// Call any user action code]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1591700194231</Id>
-					<Name><![CDATA[cancel_all]]></Name>
-					<X>-390</X><Y>400</Y>
+					<Name><![CDATA[cancelAll]]></Name>
+					<X>-320</X><Y>-70</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[var_cancel=true;
-for (int i=0;i<ped_collection.size();i++){
-	P currentPed = ped_collection.get(i);
-	pedGoTo.cancel(currentPed);
-	pedGoTo1.cancel(currentPed);
+					<Body><![CDATA[for (P ped : pedsInBlock) {
+	cancel(ped);
 }]]></Body>
+				</Function>
+				<Function AccessType="private" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[boolean]]></ReturnType>
+					<Id>1594912448384</Id>
+					<Name><![CDATA[checkForAdjustment]]></Name>
+					<X>-320</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[a]]></Name>
+						<Type><![CDATA[P]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[pedDistancingState]]></Name>
+						<Type><![CDATA[DistancingState]]></Type>
+					</Parameter>
+					<Body><![CDATA[Agent b = a.getNearestAgent(a.getPopulation());
+
+if (b == null) {
+	a.scanDistanceOutcomeCallback(null);		// Call user callback
+	return false;
+}
+
+double distanceMetres = a.distanceTo(b, LengthUnits.METER);
+a.scanDistanceOutcomeCallback(distanceMetres);	// Call user callback
+
+if (pedDistancingState.numAdjustmentAttempts >= maxNumAdjustments
+			  ||  distanceMetres >= a.getSocialDistanceMetres()) {
+	return false;		// No adjustment
+}
+
+// Calculate X and Y change to move the defined adjustment distance in the opposite direction
+// from the other ped
+
+double dy = b.getY() - a.getY();
+double dx = b.getX() - a.getX();
+
+double angleRads = atan2fast(-dy, dx);		// Allow for AL having +ve Y downwards!
+
+double adjustment_dx = abs(ADJUSTMENT_DISTANCE_PIXELS * cos(angleRads));
+double adjustment_dy = abs(ADJUSTMENT_DISTANCE_PIXELS * sin(angleRads));
+	
+if (dx > 0) {
+	adjustment_dx = -adjustment_dx;
+}
+
+if (dy > 0) {
+	adjustment_dy = -adjustment_dy;
+}
+
+// Set up the actual X,Y coords that the adjustment will try to move to, but check
+// that is a valid movement
+
+pedDistancingState.adjustmentX = a.getX() + adjustment_dx;
+pedDistancingState.adjustmentY = a.getY() + adjustment_dy;
+boolean halvedDistance = false;
+
+for (MarkupShape s : a.getNonLineObstaclesForCurrentLevel()) {
+
+	if (s.contains(pedDistancingState.adjustmentX, pedDistancingState.adjustmentY)) {		// Trying to move inside a markup shape
+		// Try once more at half the adjustment distance; don't move at all if that's still problematic
+		if (!halvedDistance) {
+			pedDistancingState.adjustmentX = a.getX() + (adjustment_dx / 2.0);
+			pedDistancingState.adjustmentY = a.getY() + (adjustment_dy / 2.0);
+			halvedDistance = true;
+			if (s.contains(pedDistancingState.adjustmentX, pedDistancingState.adjustmentY)) {		
+				return false;		// No adjustment
+			}
+		}
+	}
+	
+	// To avoid the peds moving in nonsensical ways (e.g., trying to reach a point on the other side of a wall and taking some long route round), we
+	// will cut off the adjustment movement after a given period of time (based on the time it would take them to get there in a straight line at
+	// their comfortable speed)
+}
+
+// We are making an adjustment, so cancel them from the 'main' PedGoTo block so they can perform it
+pedGoTo.cancel(a);
+return true;		// Will make an adjustment]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1594981091158</Id>
+					<Name><![CDATA[leavingCustomBlock]]></Name>
+					<X>-320</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[ped]]></Name>
+						<Type><![CDATA[P]]></Type>
+					</Parameter>
+					<Body><![CDATA[DistancingState state = pedDistancingStateMap.get(ped);
+stopScanning(ped, state);
+pedsInBlock.remove(ped);
+pedDistancingStateMap.remove(ped);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1594981442836</Id>
+					<Name><![CDATA[stopScanning]]></Name>
+					<X>-320</X><Y>230</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[ped]]></Name>
+						<Type><![CDATA[P]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[state]]></Name>
+						<Type><![CDATA[DistancingState]]></Type>
+					</Parameter>
+					<Body><![CDATA[if (state == null) {		// Only optionally passed in
+	state = pedDistancingStateMap.get(ped);
+}
+
+if (state.nextScanEvent != null) {
+	state.nextScanEvent.reset();   // Stop any more scanning for this ped
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[P]]></ReturnType>
+					<Id>1594982995930</Id>
+					<Name><![CDATA[remove]]></Name>
+					<X>-320</X><Y>-30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[ped]]></Name>
+						<Type><![CDATA[P]]></Type>
+					</Parameter>
+					<Body><![CDATA[if (pedGoTo.remove(ped) == null && pedGoTo1.remove(ped) == null && postAdjustmentDelay.remove(ped) == null) {
+	return null;			// Didn't find it
+}
+
+leavingCustomBlock(ped);	// Clear our state for them
+onRemoveAction(ped);		// Call any user action code
+return ped;]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1589970288652</Id>
 					<Name><![CDATA[connections]]></Name>
-					<X>50</X><Y>-50</Y>
+					<X>-150</X><Y>-200</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3078,7 +3501,7 @@ for (int i=0;i<ped_collection.size();i++){
 				<ContainerLink>
 					<Id>1589978490350</Id>
 					<Name><![CDATA[main]]></Name>
-					<X>50</X><Y>-100</Y>
+					<X>-150</X><Y>-230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3116,13 +3539,13 @@ for (int i=0;i<ped_collection.size();i++){
 						<Parameter>
 							<Name><![CDATA[mode]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[reachTarget?self.MODE_REACH_TARGET:self.MODE_FOLLOW_ROUTE]]></Code>
+								<Code><![CDATA[mode]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[locationType]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[targetType?self.LOCATION_AREA:self.LOCATION_LINE]]></Code>
+								<Code><![CDATA[targetType]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3133,9 +3556,15 @@ for (int i=0;i<ped_collection.size();i++){
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[locationX]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[targetPointX()]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[locationY]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[targetPointY()]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[locationArea]]></Name>
@@ -3154,24 +3583,41 @@ for (int i=0;i<ped_collection.size();i++){
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[reachTolerance]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[reachTolerance]]></Code>
+								<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[DistancingState state = pedDistancingStateMap.get(ped);
+
+if (state.userCancellation) {		// Outstanding user cancel request
+	self.cancel(ped);
+} else {
+	// Create first scanning event and reference it in the ped's distancing state (so it can be reset when the ped leaves this block
+	state.nextScanEvent = create_AdjustmentScan(scanningInterval, TimeUnits.SECOND, ped);
+}]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[pedDistancingStateMap.get(ped).numAdjustmentAttempts=0;]]></Code>
+								<Code><![CDATA[stopScanning(ped, null);
+onExitAction(ped);		// Call any user action code]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onCancel]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[stopScanning(ped, null);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped_collection.remove(ped);
-pedDistancingStateMap.remove(ped);]]></Code>
+								<Code><![CDATA[leavingCustomBlock(ped);]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -3252,13 +3698,13 @@ pedDistancingStateMap.remove(ped);]]></Code>
 						<Parameter>
 							<Name><![CDATA[locationX]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped.getX()+pedDistancingStateMap.get(ped).adjustmentX]]></Code>
+								<Code><![CDATA[pedDistancingStateMap.get(ped).adjustmentX]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[locationY]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped.getY()+pedDistancingStateMap.get(ped).adjustmentY]]></Code>
+								<Code><![CDATA[pedDistancingStateMap.get(ped).adjustmentY]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3275,18 +3721,21 @@ pedDistancingStateMap.remove(ped);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[create_StopAdjustmentMovement(movementAdjustment / getSpeed(SpeedUnits.MPS), TimeUnits.SECOND, ped);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onCancel]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[var_cancel=false;]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[leavingCustomBlock(ped);]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -3360,7 +3809,7 @@ pedDistancingStateMap.remove(ped);]]></Code>
 						<Parameter>
 							<Name><![CDATA[condition]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[!var_cancel]]></Code>
+								<Code><![CDATA[!(pedDistancingStateMap.get(agent).userCancellation)]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3381,9 +3830,7 @@ pedDistancingStateMap.remove(ped);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExitFalse]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[var_cancel=false;
-ped_collection.remove(agent);
-pedDistancingStateMap.remove(agent);]]></Code>
+								<Code><![CDATA[leavingCustomBlock(agent);]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -3428,12 +3875,12 @@ pedDistancingStateMap.remove(agent);]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1591700194299</Id>
-					<Name><![CDATA[delay1]]></Name>
-					<X>270</X><Y>130</Y>
-					<Label><X>-5</X><Y>-15</Y></Label>
+					<Name><![CDATA[postAdjustmentDelay]]></Name>
+					<X>300</X><Y>130</Y>
+					<Label><X>-15</X><Y>-5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
+					<ShowLabel>true</ShowLabel>
 					<ActiveObjectClass>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
 						<ClassName><![CDATA[Delay]]></ClassName>
@@ -3455,7 +3902,7 @@ pedDistancingStateMap.remove(agent);]]></Code>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[jiggle_delay]]></Code>
+								<Code><![CDATA[adjustmentDelay]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 							</Value>
 						</Parameter>
@@ -3564,9 +4011,104 @@ pedDistancingStateMap.remove(agent);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped_collection.add(agent);
-pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
+								<Code><![CDATA[pedsInBlock.add(agent);
+pedDistancingStateMap.put(agent, new DistancingState());
+
+onEnterAction(agent);		// Call any user action code]]></Code>
 							</Value>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1594979126945</Id>
+					<Name><![CDATA[selectOutput1]]></Name>
+					<X>210</X><Y>175</Y>
+					<Label><X>-25</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[SelectOutput]]></ClassName>
+							<ItemName><![CDATA[1412336242931]]></ItemName>
+						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[P]]></Code>
+						</GenericParameterSubstituteValue>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[conditionIsProbabilistic]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[pedDistancingStateMap.get(agent).userCancellation]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onAtEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitTrue]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[leavingCustomBlock(agent);]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitFalse]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -3627,7 +4169,7 @@ pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
 				<Text>
 					<Id>1591700194183</Id>
 					<Name><![CDATA[text]]></Name>
-					<X>-400</X><Y>360</Y>
+					<X>-330</X><Y>-110</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3637,7 +4179,7 @@ pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Access Function]]></Text>
+					<Text><![CDATA[External Interface]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>20</Size>
@@ -3648,7 +4190,7 @@ pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
 				<Text>
 					<Id>1591700194187</Id>
 					<Name><![CDATA[text1]]></Name>
-					<X>-210</X><Y>360</Y>
+					<X>-330</X><Y>10</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3658,7 +4200,7 @@ pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Private Function]]></Text>
+					<Text><![CDATA[Internal Functionality]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>20</Size>
@@ -3669,7 +4211,7 @@ pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
 				<Text>
 					<Id>1591700194189</Id>
 					<Name><![CDATA[text2]]></Name>
-					<X>-400</X><Y>20</Y>
+					<X>30</X><Y>-320</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3679,7 +4221,7 @@ pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Input Parameters]]></Text>
+					<Text><![CDATA[Parameters (custom block properties)]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>20</Size>
@@ -3848,6 +4390,92 @@ pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
 			</Presentation>
 
 				</Group>
+				<Text>
+					<Id>1594911324557</Id>
+					<Name><![CDATA[text3]]></Name>
+					<X>30</X><Y>-280</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Standard PedGoTo properties]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1594911356127</Id>
+					<Name><![CDATA[text4]]></Name>
+					<X>210</X><Y>-280</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[PedDistancingGoTo specific properties]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1594912287646</Id>
+					<Name><![CDATA[text5]]></Name>
+					<X>440</X><Y>-280</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Advanced & Action properties as per PedGoTo]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1594985701837</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>-600</X><Y>-270</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[AnyLogic custom PedDistancedMoveTo block
+Copyright (C) 2020 DSE Consulting Ltd.
+[Revised license details to add]]]></Text>
+					<Font>
+						<Name>Arial Rounded MT</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
@@ -3860,12 +4488,6 @@ pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
 			<Name><![CDATA[Customer]]></Name>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
 			<Implements><![CDATA[DistancingPedestrian]]></Implements>
-			<StartupCode><![CDATA[//time_in_bank = getEngine().time();]]></StartupCode>
-			<DestroyCode><![CDATA[//time_in_bank = getEngine().time() - time_in_bank;
-
-//domainModel.time_in_green += (green_timer/(time_in_bank*60));
-//domainModel.time_in_orange += (orange_timer/(time_in_bank*60));
-//domainModel.time_in_red += (red_timer/(time_in_bank*60));]]></DestroyCode>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1589972199469</Id>
@@ -3943,7 +4565,7 @@ pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
 			<ScaleRuler>
 				<Id>1589972199470</Id>
 				<Name><![CDATA[scale]]></Name>
-				<X>0</X><Y>-150</Y>
+				<X>200</X><Y>-110</Y>
 				<PublicFlag>false</PublicFlag>
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
@@ -3958,182 +4580,13 @@ pedDistancingStateMap.put(agent, new DistancingState());]]></Code>
 			</ScaleRuler>
 			<CurrentLevel>1589972199498</CurrentLevel>
 			<ConnectionsId>1589972199510</ConnectionsId>
-			<Variables>
-				<Variable Class="PlainVariable">
-					<Id>1589972199478</Id>
-					<Name><![CDATA[x2_Customer]]></Name>
-					<X>360</X><Y>180</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1589972199480</Id>
-					<Name><![CDATA[y2_Customer]]></Name>
-					<X>360</X><Y>200</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1589972199482</Id>
-					<Name><![CDATA[x1]]></Name>
-					<X>310</X><Y>180</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1589972199484</Id>
-					<Name><![CDATA[y1]]></Name>
-					<X>310</X><Y>200</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1589972199486</Id>
-					<Name><![CDATA[colour]]></Name>
-					<X>310</X><Y>230</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[String]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA["green"]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1589975894401</Id>
-					<Name><![CDATA[x_jiggle]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>80</X><Y>170</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1589975908297</Id>
-					<Name><![CDATA[y_jiggle]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>80</X><Y>190</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1591700249004</Id>
-					<Name><![CDATA[counter_tryingTime]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>80</X><Y>210</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[int]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-			</Variables>
-			<Events>
-				<Event>
-					<Id>1589972199505</Id>
-					<Name><![CDATA[checkDistancing]]></Name>
-					<X>310</X><Y>140</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties TriggerType="timeout" Mode="cyclic">
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
-						</Timeout>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
-						</Rate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1563004800000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[0.1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-						</RecurrenceCode>
-						<Condition><![CDATA[false]]></Condition>
-					</Properties>
-					<Action><![CDATA[Customer nearestCustomer = self.getAgent().getNearestAgent(main.customers);
-
-x1 = self.getAgent().getX();
-y1 = self.getAgent().getY();
-double distance_cus = 999;
-if (nearestCustomer!=null ) {
-	x2_Customer = nearestCustomer.getX();
-	y2_Customer = nearestCustomer.getY();
-	distance_cus = Math.sqrt(Math.pow((x2_Customer-x1), 2)+Math.pow((y2_Customer-y1),2))/main.scaleFactor; //px per meter
-	//traceln("Nearest Person (Customer) at: " + distance_cus + "m");
-	if (distance_cus > 1.0 && distance_cus < 2.0) {
-		//traceln("A bit Close...");
-		zone_of_protection.setFillColor(new Color(255, 215, 0, 191));
-		colour="orange";
-		//nearestCustomer.zone_of_protection.setFillColor(new Color(255, 215, 0, 191));
-	}  else if (distance_cus < 1.0) {
-		//traceln("Too Close!");
-		
-		colour="red";
-		zone_of_protection.setFillColor(new Color(250, 128, 114, 191));
-		//nearestCustomer.zone_of_protection.setFillColor(new Color(250, 128, 114, 191));
-	} 
-	
-	if (distance_cus >2.0) {
-		
-		colour="green";
-		zone_of_protection.setFillColor(new Color(173, 255, 47, 191));
-	}
-}
-]]></Action>
-				</Event>
-			</Events>
 			<Functions>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1594899954196</Id>
 					<Name><![CDATA[getSocialDistanceMetres]]></Name>
-					<X>310</X><Y>290</Y>
+					<X>-350</X><Y>-70</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4145,12 +4598,34 @@ if (nearestCustomer!=null ) {
 					<ReturnType><![CDATA[List<MarkupShape>]]></ReturnType>
 					<Id>1594899996153</Id>
 					<Name><![CDATA[getNonLineObstaclesForCurrentLevel]]></Name>
-					<X>310</X><Y>320</Y>
+					<X>-350</X><Y>-50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[return main.allNonLineObstacles;		// Return the list of such markup stored in Main]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1594984221440</Id>
+					<Name><![CDATA[scanDistanceOutcomeCallback]]></Name>
+					<X>-350</X><Y>-30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[distanceMetres]]></Name>
+						<Type><![CDATA[Double]]></Type>
+					</Parameter>
+					<Body><![CDATA[if (distanceMetres == null || distanceMetres > getSocialDistanceMetres()) {		// No other pedestrians or outside our social distance
+	zone_of_protection.setFillColor(new Color(173, 255, 47, 191));		// Green zone
+} else if (distanceMetres > (getSocialDistanceMetres() / 2.0)) {
+	zone_of_protection.setFillColor(new Color(255, 215, 0, 191));		// Orange zone
+} else {
+	zone_of_protection.setFillColor(new Color(250, 128, 114, 191));		// Red zone
+}]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -4179,7 +4654,7 @@ if (nearestCustomer!=null ) {
 				<ContainerLink>
 					<Id>1589972279923</Id>
 					<Name><![CDATA[main]]></Name>
-					<X>50</X><Y>-100</Y>
+					<X>210</X><Y>-150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4222,6 +4697,7 @@ if (nearestCustomer!=null ) {
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<RadiusX>100</RadiusX>
+					<RadiusXCode><![CDATA[getSocialDistanceMetres() * 100]]></RadiusXCode>
 					<RadiusY>40</RadiusY>
 					<Rotation>0.0</Rotation>
 					<FillColor>-1079115985</FillColor>
@@ -4272,6 +4748,49 @@ if (nearestCustomer!=null ) {
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
 				</Figure3D>
+				<Text>
+					<Id>1594984658959</Id>
+					<Name><![CDATA[text1]]></Name>
+					<X>-360</X><Y>-170</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Functions required for the
+DistancingPedestrian interface]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>20</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1594984704312</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>-360</X><Y>-110</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-65536</Color>
+					<Text><![CDATA[All functions must be public]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
@@ -4365,7 +4884,7 @@ if (nearestCustomer!=null ) {
 				<Text>
 					<Id>0</Id>
 					<Name><![CDATA[text]]></Name>
-					<X>120</X><Y>80</Y>
+					<X>40</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4375,7 +4894,7 @@ if (nearestCustomer!=null ) {
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[CUSTOM PED BLOCK WITH SOCIAL DISTANCING RULE]]></Text>
+					<Text><![CDATA[Demo Model for Custom Pedestrian Library Block With Social Distancing]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>24</Size>
@@ -4386,7 +4905,7 @@ if (nearestCustomer!=null ) {
 				<Image>
 					<Id>1594312224455</Id>
 					<Name><![CDATA[image]]></Name>
-					<X>540</X><Y>240</Y>
+					<X>660</X><Y>230</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4408,7 +4927,7 @@ if (nearestCustomer!=null ) {
 				<Image>
 					<Id>1594312233460</Id>
 					<Name><![CDATA[image1]]></Name>
-					<X>960</X><Y>300</Y>
+					<X>1080</X><Y>290</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4443,7 +4962,7 @@ if (nearestCustomer!=null ) {
 					<LineColor>-16777216</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
-					<Width>420</Width>
+					<Width>570</Width>
 					<Height>320</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>1869328872</FillColor>
@@ -4452,7 +4971,7 @@ if (nearestCustomer!=null ) {
 				<Text>
 					<Id>1594312319612</Id>
 					<Name><![CDATA[text1]]></Name>
-					<X>20</X><Y>420</Y>
+					<X>20</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4462,14 +4981,15 @@ if (nearestCustomer!=null ) {
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Author: Kelivn Yeung
-Email kelvin@dseconsulting.co.uk
+					<Text><![CDATA[Authors:
+Kelvin Yeung & Stuart Rossiter
+(DSE Consulting)
 
-For more info, please visit:
-www.dseconsulting.co.uk]]></Text>
+Visit our Web site or follow us
+on LinkedIn.]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>24</Size>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -4477,7 +4997,7 @@ www.dseconsulting.co.uk]]></Text>
 				<Group>
 					<Id>1594312690091</Id>
 					<Name><![CDATA[group]]></Name>
-					<X>80</X><Y>640</Y>
+					<X>300</X><Y>640</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4539,7 +5059,7 @@ www.dseconsulting.co.uk]]></Text>
 				<Text>
 					<Id>1594312768109</Id>
 					<Name><![CDATA[text4]]></Name>
-					<X>205</X><Y>592</Y>
+					<X>310</X><Y>550</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4549,7 +5069,8 @@ www.dseconsulting.co.uk]]></Text>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Click me and follow us!]]></Text>
+					<Text><![CDATA[Click us to open
+in AnyLogic's embedded browser!]]></Text>
 					<Font>
 						<Name>Arial Rounded MT</Name>
 						<Size>16</Size>
@@ -4560,7 +5081,7 @@ www.dseconsulting.co.uk]]></Text>
 				<Image>
 					<Id>1594312768119</Id>
 					<Name><![CDATA[image3]]></Name>
-					<X>160</X><Y>590</Y>
+					<X>260</X><Y>540</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4582,7 +5103,7 @@ www.dseconsulting.co.uk]]></Text>
 				<Text>
 					<Id>1594314560065</Id>
 					<Name><![CDATA[text2]]></Name>
-					<X>720</X><Y>560</Y>
+					<X>680</X><Y>590</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4592,11 +5113,9 @@ www.dseconsulting.co.uk]]></Text>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[AnyLogic Custom MoveTo Block (Social Distancing edition)  
-Copyright (C) 2020 Kelvin Yeung
-This program comes with ABSOLUTELY NO WARRANTY; 
-This is free software, and you are welcome to redistribute it
-under certain conditions; see GNU GPL License for details.]]></Text>
+					<Text><![CDATA[Demo model for AnyLogic custom PedDistancedMoveTo block
+Copyright (c) 2020 DSE Consulting Ltd.
+[Revised license details to add]]]></Text>
 					<Font>
 						<Name>Arial Rounded MT</Name>
 						<Size>16</Size>
@@ -4604,6 +5123,29 @@ under certain conditions; see GNU GPL License for details.]]></Text>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<Image>
+					<Id>1594986013697</Id>
+					<Name><![CDATA[image4]]></Name>
+					<X>20</X><Y>590</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[getExperimentHost().openWebSite("https://www.dseconsulting.co.uk");]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>205</Width>
+					<Height>92</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[pedMoveTo]]></PackageName>
+							<ClassName><![CDATA[DSE_logo.jpg]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
 			</Presentation>
 
 			<Parameters>			
@@ -4614,7 +5156,7 @@ under certain conditions; see GNU GPL License for details.]]></Text>
 				<Title><![CDATA[PlayGround : Simulation]]></Title>	
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
-				<RealTimeScale>0.02</RealTimeScale>
+				<RealTimeScale>0.04</RealTimeScale>
 			</PresentationProperties>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Never]]></StopOption>
@@ -4649,9 +5191,19 @@ under certain conditions; see GNU GPL License for details.]]></Text>
 	 * This is needed so that the PedDistancingMoveTo block can determine how to adjust the movement of socially-distancing
 	 * pedestrians without trying to move inside an obstacle (which would cause an AnyLogic error).
 	 * 
-	 * @return A list (e.g., ArrayList or LinkedList) of all relevant space markup elements for the agent's current level
+	 * @return A list (e.g., ArrayList or LinkedList) of all relevant space markup elements for the agent's current level.
 	 */
 	List<MarkupShape> getNonLineObstaclesForCurrentLevel();
+	
+	/**
+	 * Callback function (method) that the PedDistancingGoTo block will call each time the pedestrian scans for nearby pedestrians,
+	 * providing the distance of the nearest such person (or null if there were no other pedestrians).
+	 * 
+	 * Allows the PedDistancingGoTo block user to implement their own animation or similar in response to the scans.
+	 * 
+	 * @param distanceMetres The distance of the nearest pedestrian at the time of the scan (in metres) or null if none.
+	 */
+	void scanDistanceOutcomeCallback(Double distanceMetres);
 }]]></Text>
 		</JavaClass>
 	</JavaClasses>
@@ -4697,6 +5249,10 @@ under certain conditions; see GNU GPL License for details.]]></Text>
 		</Resource>
 		<Resource>
 			<Path><![CDATA[linkedin.png]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[DSE_logo.jpg]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		</Resource>
 	</ModelResources>
