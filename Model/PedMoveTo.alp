@@ -2171,6 +2171,29 @@ from the custom PedGoTo block just as for the standard one.]]></Text>
 						<LabelText><![CDATA[Cancel All Peds]]></LabelText>
 					</ExtendedProperties>
 				</Control>
+				<Text>
+					<Id>1595262105359</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>-410</X><Y>-90</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[AnyLogic custom PedDistancingGoTo block demo model
+Copyright (C) 2020 DSE Consulting Ltd.
+MIT license: see LICENSE.txt file]]></Text>
+					<Font>
+						<Name>Arial Rounded MT</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
@@ -4466,9 +4489,9 @@ onEnterAction(agent);		// Call any user action code]]></Code>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[AnyLogic custom PedDistancedMoveTo block
+					<Text><![CDATA[AnyLogic custom PedDistancingGoTo block
 Copyright (C) 2020 DSE Consulting Ltd.
-[Revised license details to add]]]></Text>
+MIT license: see LICENSE.txt file]]></Text>
 					<Font>
 						<Name>Arial Rounded MT</Name>
 						<Size>14</Size>
@@ -4791,6 +4814,29 @@ DistancingPedestrian interface]]></Text>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<Text>
+					<Id>1595262157287</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>-430</X><Y>-240</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[AnyLogic custom PedDistancingGoTo block demo model
+Copyright (C) 2020 DSE Consulting Ltd.
+MIT license: see LICENSE.txt file]]></Text>
+					<Font>
+						<Name>Arial Rounded MT</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
@@ -5100,29 +5146,6 @@ in AnyLogic's embedded browser!]]></Text>
 					</ImageFiles>
 					<OriginalSize>false</OriginalSize>
 				</Image>
-				<Text>
-					<Id>1594314560065</Id>
-					<Name><![CDATA[text2]]></Name>
-					<X>680</X><Y>590</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Demo model for AnyLogic custom PedDistancedMoveTo block
-Copyright (c) 2020 DSE Consulting Ltd.
-[Revised license details to add]]]></Text>
-					<Font>
-						<Name>Arial Rounded MT</Name>
-						<Size>16</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
 				<Image>
 					<Id>1594986013697</Id>
 					<Name><![CDATA[image4]]></Name>
@@ -5146,6 +5169,29 @@ Copyright (c) 2020 DSE Consulting Ltd.
 					</ImageFiles>
 					<OriginalSize>false</OriginalSize>
 				</Image>
+				<Text>
+					<Id>1595262128250</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>750</X><Y>620</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[AnyLogic custom PedDistancingGoTo block demo model
+Copyright (C) 2020 DSE Consulting Ltd.
+MIT license: see LICENSE.txt file]]></Text>
+					<Font>
+						<Name>Arial Rounded MT</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 			<Parameters>			
