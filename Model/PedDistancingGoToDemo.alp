@@ -7,7 +7,7 @@
 <AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.5.2.202001241823" AlpVersion="8.5.1">
 <Model>
 	<Id>1568281099186</Id>
-	<Name><![CDATA[PedMoveTo]]></Name>
+	<Name><![CDATA[PedDistancingGoToDemo]]></Name>
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[pedMoveTo]]></JavaPackageName>
 	<ModelTimeUnit><![CDATA[Minute]]></ModelTimeUnit>
@@ -212,7 +212,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[distancedGoTo]]></ItemName>
+						<ItemName><![CDATA[distancingGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
@@ -245,7 +245,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[distancedGoTo]]></ItemName>
+						<ItemName><![CDATA[distancingGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
@@ -280,7 +280,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[distancedGoTo]]></ItemName>
+						<ItemName><![CDATA[distancingGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
@@ -315,7 +315,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[distancedGoTo]]></ItemName>
+						<ItemName><![CDATA[distancingGoTo]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
@@ -340,7 +340,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[distancedGoTo]]></ItemName>
+						<ItemName><![CDATA[distancingGoTo]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
@@ -373,7 +373,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[distancedGoTo]]></ItemName>
+						<ItemName><![CDATA[distancingGoTo]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[pedMoveTo]]></PackageName>
@@ -513,6 +513,9 @@
 										</GenericParameterSubstituteReference>
 									</GenericParameterSubstitute>
 									<Parameters>
+										<Parameter>
+											<Name><![CDATA[socialDistanceMetres]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -834,6 +837,9 @@
 						</GenericParameterSubstituteReference>
 					</GenericParameterSubstitute>
 					<Parameters>
+						<Parameter>
+							<Name><![CDATA[socialDistanceMetres]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -877,7 +883,7 @@
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1589978488618</Id>
-					<Name><![CDATA[distancedGoTo]]></Name>
+					<Name><![CDATA[distancingGoTo]]></Name>
 					<X>340</X><Y>460</Y>
 					<Label><X>-25</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -1087,6 +1093,9 @@
 										</GenericParameterSubstituteReference>
 									</GenericParameterSubstitute>
 									<Parameters>
+										<Parameter>
+											<Name><![CDATA[socialDistanceMetres]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -1312,6 +1321,9 @@
 										</GenericParameterSubstituteReference>
 									</GenericParameterSubstitute>
 									<Parameters>
+										<Parameter>
+											<Name><![CDATA[socialDistanceMetres]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -1537,6 +1549,9 @@
 										</GenericParameterSubstituteReference>
 									</GenericParameterSubstitute>
 									<Parameters>
+										<Parameter>
+											<Name><![CDATA[socialDistanceMetres]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -1750,7 +1765,7 @@
 				<RectangleArea>
 					<Id>1589965778173</Id>
 					<Name><![CDATA[area]]></Name>
-					<X>540</X><Y>180</Y>
+					<X>550</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1780,8 +1795,8 @@
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>100</Width>
-					<Height>60</Height>
+					<Width>70</Width>
+					<Height>40</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleArea>
 				<Control Type="Button">
@@ -1886,7 +1901,7 @@
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[pedSource3.inject(1);]]></ActionCode>
+						<ActionCode><![CDATA[pedSource4.inject(1);]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
@@ -1928,7 +1943,7 @@
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[pedSource4.inject(1);]]></ActionCode>
+						<ActionCode><![CDATA[pedSource3.inject(1);]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
@@ -1950,7 +1965,7 @@
 						<TextColor/>
 						<Enabled>true</Enabled>
 						<EnableExpression><![CDATA[lastGoToEnteredPed != null]]></EnableExpression>
-						<ActionCode><![CDATA[distancedGoTo.cancel(lastGoToEnteredPed);]]></ActionCode>
+						<ActionCode><![CDATA[distancingGoTo.cancel(lastGoToEnteredPed);]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
@@ -2056,8 +2071,8 @@
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Try out different property settings and see the effect!
-Hover on the properties to see descriptions.]]></Text>
+					<Text><![CDATA[Try out different property settings and see the effect.
+Hover on the properties to see descriptions (or see the README file that came with this model).]]></Text>
 					<Font>
 						<Name>Arial Rounded MT</Name>
 						<Size>16</Size>
@@ -2101,7 +2116,9 @@ Hover on the properties to see descriptions.]]></Text>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
 					<Text><![CDATA[These buttons are to demonstrate that pedestrians can be cancelled
-from the custom PedGoTo block just as for the standard one.]]></Text>
+from the custom PedGoTo block just as for the standard one.
+
+(In this model they just stop where they are and eventually get deleted.)]]></Text>
 					<Font>
 						<Name>Arial Rounded MT</Name>
 						<Size>16</Size>
@@ -2164,7 +2181,7 @@ from the custom PedGoTo block just as for the standard one.]]></Text>
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[distancedGoTo.cancelAll();]]></ActionCode>
+						<ActionCode><![CDATA[distancingGoTo.cancelAll();]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
@@ -2191,6 +2208,87 @@ MIT license: see LICENSE.txt file]]></Text>
 						<Name>Arial Rounded MT</Name>
 						<Size>14</Size>
 						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Wall>
+					<Id>1595262666721</Id>
+					<Name><![CDATA[wall]]></Name>
+					<X>490</X><Y>290</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LineColor>-3308225</LineColor>
+					<LineWidth>2</LineWidth>
+					<LineMaterial>null</LineMaterial>
+					<FillingType>HATCHED_AREA</FillingType>
+					<ZHeight>20</ZHeight>
+					<Closed>false</Closed>
+					<Points>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>-24.038</X><Y>6.868</Y><Z>0</Z></Point>
+						<Point><X>24.038</X><Y>-6.868</Y><Z>0</Z></Point>
+						<Point><X>70</X><Y>-20</Y><Z>0</Z></Point>
+						<Point><X>45.962</X><Y>-13.132</Y><Z>0</Z></Point>
+						<Point><X>79.285</X><Y>-43.212</Y><Z>0</Z></Point>
+						<Point><X>90</X><Y>-70</Y><Z>0</Z></Point>
+						<Point><X>80.715</X><Y>-46.788</Y><Z>0</Z></Point>
+						<Point><X>50</X><Y>-20</Y><Z>0</Z></Point>
+					</Points>
+				</Wall>
+				<Wall>
+					<Id>1595262675309</Id>
+					<Name><![CDATA[wall1]]></Name>
+					<X>690</X><Y>290</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LineColor>-3308225</LineColor>
+					<LineWidth>2</LineWidth>
+					<LineMaterial>null</LineMaterial>
+					<FillingType>HATCHED_AREA</FillingType>
+					<ZHeight>20</ZHeight>
+					<Closed>false</Closed>
+					<Points>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>22.979</X><Y>9.848</Y><Z>0</Z></Point>
+						<Point><X>-22.979</X><Y>-9.848</Y><Z>0</Z></Point>
+						<Point><X>-70</X><Y>-30</Y><Z>0</Z></Point>
+						<Point><X>-47.021</X><Y>-20.152</Y><Z>0</Z></Point>
+						<Point><X>-70</X><Y>-55</Y><Z>0</Z></Point>
+						<Point><X>-70</X><Y>-70</Y><Z>0</Z></Point>
+						<Point><X>-70</X><Y>-45</Y><Z>0</Z></Point>
+						<Point><X>-90</X><Y>-30</Y><Z>0</Z></Point>
+					</Points>
+				</Wall>
+				<Text>
+					<Id>1595262764505</Id>
+					<Name><![CDATA[text7]]></Name>
+					<X>40</X><Y>220</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[70% try to maintain a 2m social distance; the
+other 30% a 1m social distance. Their distancing
+limit is shown as a circle which changes colour
+as others get slightly (orange) or well (red) within
+their preferred distance.]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
@@ -4588,7 +4686,7 @@ MIT license: see LICENSE.txt file]]></Text>
 			<ScaleRuler>
 				<Id>1589972199470</Id>
 				<Name><![CDATA[scale]]></Name>
-				<X>200</X><Y>-110</Y>
+				<X>300</X><Y>-110</Y>
 				<PublicFlag>false</PublicFlag>
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
@@ -4603,6 +4701,32 @@ MIT license: see LICENSE.txt file]]></Text>
 			</ScaleRuler>
 			<CurrentLevel>1589972199498</CurrentLevel>
 			<ConnectionsId>1589972199510</ConnectionsId>
+			<Variables>
+				<Variable Class="Parameter">
+					<Id>1595262474643</Id>
+					<Name><![CDATA[socialDistanceMetres]]></Name>
+					<X>30</X><Y>-140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[randomTrue(0.7) ? 2.0 : 1.0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1595262474641</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
 			<Functions>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -4614,7 +4738,7 @@ MIT license: see LICENSE.txt file]]></Text>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[return 2.0;		// Fixed social distance for all customers]]></Body>
+					<Body><![CDATA[return socialDistanceMetres;	// As set in agent parameter]]></Body>
 				</Function>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -4655,7 +4779,7 @@ MIT license: see LICENSE.txt file]]></Text>
 				<AgentLink>
 					<Id>1589972199510</Id>
 					<Name><![CDATA[connections]]></Name>
-					<X>50</X><Y>-50</Y>
+					<X>300</X><Y>-70</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4677,7 +4801,7 @@ MIT license: see LICENSE.txt file]]></Text>
 				<ContainerLink>
 					<Id>1589972279923</Id>
 					<Name><![CDATA[main]]></Name>
-					<X>210</X><Y>-150</Y>
+					<X>310</X><Y>-150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4819,7 +4943,7 @@ DistancingPedestrian interface]]></Text>
 					<Name><![CDATA[text6]]></Name>
 					<X>-430</X><Y>-240</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
+					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D</DrawMode>
@@ -5119,7 +5243,7 @@ on LinkedIn.]]></Text>
 in AnyLogic's embedded browser!]]></Text>
 					<Font>
 						<Name>Arial Rounded MT</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
