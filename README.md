@@ -27,11 +27,9 @@ It is released under a permissive MIT license (see `LICENSE.txt`).
 With the recent COVID-19 pandemic, there has been a lot of focus on maintaining
 social distance as a transmission prevention measure, with all the related
 issues of how to manage that in the context of businesses or social
-environments.
-
-At DSE Consulting, we had a few clients enquiring about ways to explicitly model
-this using AnyLogic, and it was something we'd already been interested in to
-help the simulation community.
+environments. At DSE Consulting, we had a few clients enquiring about ways to
+explicitly model this using AnyLogic, and it was something we'd already been
+interested in to help the simulation community.
 
 Within AnyLogic, there are roughly three common techniques used for moving
 agents round in space that are most relevant to contexts where social distancing
@@ -143,4 +141,23 @@ The enhanced behaviour is as follows:
   * The pedestrian will exit the custom block when it completes its original
     desired movement (as per a normal PedGoTo block).
 
+### Possible Future Changes
+
+The use of required functions in the agent type is powerful (and useful to see
+as a technique), but is not the typical way this is handled in process blocks.
+For example, the per-pedestrian social distance and list of obstacle markup
+could be dynamic properties of the block, and the on-scan callback could be an
+action property. (The obstacles could also potentially be determined
+programmatically inside the custom block without the user having to provide a
+list of them, though this is slightly complex because of the range of possible
+space markup elements, only some of which are relevant.)
+
+We aim to produce a future release which addresses these points.
+
+There are of course a multitude of ways in which the social distancing behaviour
+could be refined, all of which would require more complex internal logic (e.g.,
+to work out exactly where a pedestrian could most sensibly move to away from
+another pedestrian, or a more refined decision when multiple other pedestrians
+were close). These are the kinds of things we hope modellers might explore, and
+may be something we'll have time to explore in future.
 
