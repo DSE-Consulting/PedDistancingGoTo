@@ -14,6 +14,15 @@ This project (repository) includes an AnyLogic simulation model which
     client), though we are not claiming this is an 'off-the-shelf' usable
     library for implementing social distancing in models (see later).
 
+**The model and custom block illustrate one way to start building in social
+distancing to models, provided as a resource to the simulation community. It
+isn't a full solution (even for pure pedestrian models), and there are lots of
+refinements that could be made. Our company
+[DSE](http://www.dseconsulting.co.uk) uses these kinds of ideas in models for
+clients, and (as well as distributing AnyLogic in the UK and Italy) we provide
+training and mentoring services in AnyLogic which can cover these kinds of
+techniques.**
+
 ### AnyLogic Version
 
 The model requires AnyLogic V8.5.2 or later.
@@ -155,9 +164,13 @@ space markup elements, only some of which are relevant.)
 We aim to produce a future release which addresses these points.
 
 There are of course a multitude of ways in which the social distancing behaviour
-could be refined, all of which would require more complex internal logic (e.g.,
-to work out exactly where a pedestrian could most sensibly move to away from
-another pedestrian, or a more refined decision when multiple other pedestrians
-were close). These are the kinds of things we hope modellers might explore, and
-may be something we'll have time to explore in future.
+could be refined within the custom block, all of which would require more
+complex internal logic (e.g., to work out exactly where a pedestrian could most
+sensibly move to away from another pedestrian, or a more refined decision when
+multiple other pedestrians were close).
+
+Plus, as covered earlier, the behaviour could be extended to custom versions of
+other Pedestrian Library blocks (e.g., PedService) or applied completely
+separately to movement in process-based models (using the Process Modeling
+Library) or purer agent-based models.
 

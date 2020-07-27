@@ -5048,7 +5048,7 @@ MIT license: see LICENSE.txt file]]></Text>
 					<Width>1167</Width>
 					<Height>700</Height>
 					<Rotation>0.0</Rotation>
-					<FillColor>1878388818</FillColor>
+					<FillColor>1876475864</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
 				<Text>
@@ -5313,6 +5313,34 @@ MIT license: see LICENSE.txt file]]></Text>
 						<Name>Arial Rounded MT</Name>
 						<Size>14</Size>
 						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1595842932529</Id>
+					<Name><![CDATA[text2]]></Name>
+					<X>40</X><Y>150</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-7667712</Color>
+					<Text><![CDATA[This model and custom block illustrate one way to start building in social distancing
+to models, provided as a resource to the simulation community. It isn't a full solution
+(even for pure pedestrian models), and there are lots of refinements that could be made.
+See the README file for more details.
+
+Our company DSE (http://www.dseconsulting.co.uk) uses these kinds of ideas in
+models for clients, and (as well as distributing AnyLogic in the UK and Italy) we provide
+training and mentoring services in AnyLogic which can cover these kinds of techniques.]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
