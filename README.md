@@ -14,6 +14,19 @@ This project (repository) includes an AnyLogic simulation model which
     client), though we are not claiming this is an 'off-the-shelf' usable
     library for implementing social distancing in models (see later).
 
+_____
+
+**AnyLogic v8.7 now has social distancing built-in to the Pedestrian library
+(controlled by the PedSettings block); the help page for PedSettings gives an
+overview of how it works and what 'rules' apply to socially-distanced movement.
+Thus, the model here is slightly redundant, but still illustrates a way to do
+social-distancing more explicitly (and hints at the kinds of things AnyLogic's
+built-in behaviour would have to contend with) and gives some ideas on how you
+might attempt it if you wanted to apply it when using another library such as
+the Process Modeling Library.**
+
+____
+
 **The model and custom block illustrate one way to start building in social
 distancing to models, provided as a resource to the simulation community. It
 isn't a full solution (even for pure pedestrian models), and there are lots of
